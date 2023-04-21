@@ -1,0 +1,26 @@
+
+NOTE:
+- Your time complexities should be expressed in big-O notation and be in
+  terms of n, where n is the number of cells in the maze.
+
+============
+  solveBfs
+============
+
+- Worst case time complexity: O(n)
+
+- Explanation: In this case each cell made has 4 neighbours as defined prior to code start.
+SO when a call is visited 4 more cells are added to the queue. Meaning, the main loop
+will have at the most 4*n iterations through the loop system. All operations within this code is a constant 0(1), so
+in total the worst case will be O(n).
+============
+  solveDfs
+============
+
+- Worst case time complexity: O(n)
+
+- Explanation:  In this case each cell made has 4 neighbours as defined prior to code start.
+So when a call is visited 4 more cells are added to the stack. Meaning, the main loop
+will have at the most 4*n iterations through the loop system. All operations within this code is a constant 0(1), so
+in total the worst case will be O(n).
+
