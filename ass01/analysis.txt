@@ -1,0 +1,140 @@
+
+========================================================================
+                          Complexity Analysis
+========================================================================
+
+NOTE:
+- Your time complexities should be in big-O notation.
+- For operations that involve only one set, your time complexities should
+  be in terms of n, where n is the number of elements in the set.
+- For operations that involve two sets, your time complexities should be in
+  terms of n and m, where n and m are the number of elements in each of the
+  sets respectively.
+
+
+--------
+SetUnion
+--------
+
+Worst case complexity: O(n+mlog(n+m)) = O(mlog(n+m)
+
+Explanation: 
+O(n) complexity to copy all the nodes 1 by 1 from set 1 to new set.
+For each node of set 2, keep on inserting it to new set with each node taking complexity of normal insert, which is O(logn).
+So for m nodes of set 2, it will take O(mlog(n+m))
+
+---------------
+SetIntersection
+---------------
+
+Worst case complexity: O(mlogn)
+
+Explanation: 
+
+This case will be O(mlogn) becuase you are searching m elements in set 2. 
+These elements are then added to a new set if they are present. This operation will take O(n+mlog(n+m)
+which equals O(mlogn) in a worst case scenario. [i.e. set 1 -> m & set 2 -> n].
+
+-------------
+SetDifference
+-------------
+
+Worst case complexity: O(mlogn)
+
+Explanation: 
+
+SetDifference is similar in it's operation nature to SetIntersection
+because you are searching m elements in set 2 which takes O(mlogn). The elements that are not present
+will be added to a new set which is created via the SetNew() function. 
+Since, this is handling two set cases (s1 & s2) the overal worst case time complexity will
+be O(mlogn).
+
+---------
+SetEquals
+---------
+
+Worst case complexity: O(mlogn)
+
+Explanation: 
+
+SetEquals has a worst case complexity of O(mlogn), becuase the main function calls the equalsHelper
+function which similar to other functions searches m elemtns in set 2 (s2) which takes a balanced binary 
+search tree O(mlogn). This proceeds to then calculate the equal elements in both sets (if they all are present)
+
+
+---------
+SetSubset
+---------
+
+Worst case complexity: O(mlogn)
+
+Explanation: 
+
+SetSubset has a worst case complexity of O(mlogn), because the main function calls the subsetHelper
+function which is similar in nature to the previous functions as it searches m elements in set 2 (s2).
+This function return true if set s1 is a subset of s2 - so the search for both sets (s1 & s2) in this situation
+will take O(mlogn) in the worst case scenario - this means that when the input size increases exponentially,
+the running time will increase linearly. 
+
+--------
+SetFloor
+--------
+
+Worst case complexity: O(logn)
+
+Explanation: 
+
+In this situation we are dealing with a single set (s). Which means that the main function a constant O(1)
+calls the helper function (floorHelper) which has the worst time complexity of O(logn). The set
+present in the helper function will require a search implementation to find the greatest
+element that is less than or equal to the given element - meaning, that the worst case scenario
+will become O(logn) for a balanced binary search tree. 
+
+----------
+SetCeiling 
+----------
+
+Worst case complexity: O(logn)
+
+Explanation: 
+
+Similar to the SetFloor function the worst case time complexity will be O(logn). 
+The proccess behind the code is similar, the main function calls on the helper function
+ceilHelper, which has the worst time complexity of O(logn). This is becuase the set will need to be
+searched through to find the smalles elemnt that is greater than or equal to the given element. 
+
+========================================================================
+               Design Documentation for Cursor Operations
+========================================================================
+
+If you completed the cursor operations, you must explain the design and
+implementation of your solution here.
+
+
+The cursor operation utilised within my code is very similar to a linked list approach. 
+Meaning that the cursor points to the binary search tree node (lowest value first). 
+The cursor will behave like a link list, where the cursor nodes made in the struct cursorNode
+is link list nodes. This approach was taken over other methodologies due to its simplicity 
+and low complexity time - meaning the goal could have been achieved through lower calculation time.
+
+Moreover, in relation to the time complexity of each function implemented. 
+- SetCursorFree: has a time complexity of O(logn), due to the presence of the while 
+  loop which will repeat n times until all node is cleared.
+  This is because each node is being cleared(free'd).
+
+- SetCursorNext: has a time complexity of O(1), a constant subce the input size will not alter
+  time of calculation. This moves the cursor to the next node (similar toa linked list structure).
+  The calculation involving NULL operations will also be a constant since the operation is done within
+  a single line (and input size does not affect calculation time)
+  
+- SetCursorNew: This function creates a cursor for a given set, and this is positioned a the smallest element of the set. 
+  Meaning, if you had a set that included {1,2,3,4,5}, the cursor will be pointing to node 1. 
+  The main function mallocs memory for the new (sc) ~ cursor and the root and previous address is set to NULL. 
+  The main function also calls on the helper function. The helper function mallocs memory for the Cursor node,
+  this makes use of the cursorNode struct [*point & *next]. The linked list idealogy with the balanced search tree
+  makes the time complexity constant on an average scale (worst case scenario does not alter).
+
+
+
+
+

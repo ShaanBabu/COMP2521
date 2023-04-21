@@ -1,0 +1,45 @@
+Question 3
+
+(a) How many times (exact number) is the statement in line 3 executed 
+    (initialization of components)?
+
+    For all the nodes within a graph (until no mor enodes are present).
+    In this specific example dealing with Sydney, Melbourne, Hobart, Auckland
+    and Wellington it would be 5 nodes that needs to be initialised. 
+
+(b) How many times (exact number) is the statement in line 6 executed 
+    (deleting an edge from the list of edges)?
+
+    it wil continue deleting for n times until all edges have been deleted. If an adjacency
+    matrix method was used during implementation the time complexity can be reduced to O(1). 
+    If an adjacency list is utilised it will have a time complexity of O(n) since you will have to iterate
+    through the entire list. In the specific example with the cities line 6 will be executed for 4 times between all 
+    the edges of the given city. 
+
+(c) What is the time complexity (in big-O notation) of testing whether
+    two nodes are in different components?
+    O(n) -> becuase it will need to iterate through all the given edges of the graph fo n times.
+    THis is because of the while loop that the if statement is contained within. The checking of same components
+    is O(1) (constant), but due to it being contained within the while loop it will take O(n) times (linear time method).
+
+
+(d) In the worst case, how many times (exact number) is the statement in
+    line 8 executed (merging two components)? Justify your answer.
+
+    In worst case scenario - all the nodes given (cities) will be in different components. So the worst
+    case scenario will be for n-times (edges). If all 5 cities were in different components then the line 8
+    will be executed for 4 times. 
+
+(e) What is the worst case time complexity (in big-O notation) of
+    merging two components into a single component? Justify your answer.
+    In worst case time this will be O(n+n) times, which will be O(n). This is becuase you have n nodes
+    within the given graph. If this was stored in adjaceny list methodology. It will require iteration over each node
+    to establish if there is an edge present. 
+
+
+(f) What is the overall worst case time complexity (in big-O notation)
+    of this algorithm? Ignore the complexity of lines 1 and 4. Justify
+    your answer.
+    O(n^2).
+
+

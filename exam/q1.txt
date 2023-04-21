@@ -1,0 +1,37 @@
+Question 1
+
+(a) How many key comparisons will be performed while searching for the 
+    key 60 in the tree?
+
+    4 searches will be done. 
+
+
+(b) What is the minimum possible number of key comparisons that would be
+    required in a successful search in the tree?
+
+    minimum would be root search. The only key searched in this case would be the key(integer)
+    42. Thus, only 1 search done. 
+
+    List all the search keys that would cause this.
+    42
+
+
+(c) What is the maximum possible number of key comparisons that would be
+    required in a successful search in the tree?
+    6 key searches for nodes at very end (51 and 33)
+
+
+    List all the search keys that would cause this.
+    To search for 51: 42->69->50->60->55->51
+    To search for 33: 42->20->36->30->32->33
+
+
+(d) What is the minimum possible number of key comparisons that would be
+    required in an unsuccessful search in the tree?
+    4 comparisons made
+
+
+    Give two different search key(s) that would cause this.
+    15 or 42
+
+

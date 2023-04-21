@@ -1,0 +1,15 @@
+Question 8
+
+(a) Give the max heap (in array representation) that would result from
+    inserting the keys in the order given into an initially empty heap.
+
+    NOTE: Replace the underlines with the keys. Index 0 should be unused.
+
+[0]  [1]  [2]  [3]  [4]  [5]  [6]  [7]  [8]
+   
+    Y      X    S    P    M    H    E    A
+(b) Give the max heap (in array representation) that would result from
+    deleting the largest key from the heap produced in part (a).
+
+[0]  [1]  [2]  [3]  [4]  [5]  [6]  [7]  [8]
+      X    P   S     M    E    H    A   
